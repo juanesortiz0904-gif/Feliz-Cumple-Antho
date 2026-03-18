@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feliz Cumpleaños Amor De Mi Vida/title>
+  <title>Feliz Cumpleaños Amor De Mi Vida</title>
 
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: radial-gradient(circle at top, #0b1d3a, #020111);
+      /* FONDO ROMÁNTICO: Atardecer suave */
+      background: radial-gradient(circle at top, #ffafbd, #ffc3a0, #2193b0);
+      background-attachment: fixed;
       font-family: 'Georgia', serif;
       overflow-x: hidden;
     }
@@ -26,159 +28,135 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 30px 0;
+      padding: 40px 0;
       position: relative;
       z-index: 1;
     }
 
     .carta {
-      background: rgba(255, 255, 255, 0.97);
+      background: rgba(255, 255, 255, 0.92);
       width: 90%;
-      max-width: 720px;
-      padding: 35px;
-      border-radius: 14px;
-      box-shadow: 0 25px 55px rgba(0, 0, 0, 0.45);
+      max-width: 650px;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
       line-height: 1.8;
-      color: #333;
+      color: #444;
       animation: aparecer 1.5s ease;
+      border: 1px solid rgba(255, 182, 193, 0.5);
     }
 
     @keyframes aparecer {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* TÍTULO FLOTANTE */
     .carta h1 {
       text-align: center;
       font-weight: normal;
-      color: #b30000;
+      color: #d63384;
       margin-bottom: 30px;
       font-size: 28px;
       animation: flotar 4s ease-in-out infinite;
     }
 
     @keyframes flotar {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0); }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     .carta p {
       font-size: 18px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      text-align: justify;
     }
 
     .firma {
       margin-top: 45px;
       text-align: right;
       font-style: italic;
-      color: #555;
+      color: #777;
+      line-height: 1.4;
     }
 
-    @media (max-width: 480px) {
-      .carta {
-        padding: 25px;
-      }
-      .carta p {
-        font-size: 17px;
-      }
-      .carta h1 {
-        font-size: 24px;
-      }
-    }
-        .boton-final {
-    display: block;
-    margin: 40px auto 0;
-    padding: 14px 30px;
-    font-size: 18px;
-    font-family: 'Georgia', serif;
-    background: linear-gradient(45deg, #ff4d4d, #ffd700);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    animation: latido 2s infinite;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    .boton-final {
+      display: block;
+      margin: 40px auto 0;
+      padding: 15px 35px;
+      font-size: 18px;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(45deg, #ff4d6d, #ff85a1);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      animation: latido 2s infinite;
+      box-shadow: 0 8px 20px rgba(255, 77, 109, 0.4);
+      transition: 0.3s;
     }
 
     @keyframes latido {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.08); }
-    100% { transform: scale(1); }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
 
-    /* MENSAJE FINAL */
     .mensaje-final {
-    position: fixed;
-    inset: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    color: white;
-    font-size: 64px;
-    font-family: 'Georgia', serif;
-    animation: flotar 4s ease-in-out infinite;
-    text-shadow: 0 0 20px rgba(255,255,255,0.8);
+      position: fixed;
+      inset: 0;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      color: white;
+      font-size: 50px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(5px);
+      text-shadow: 0 0 20px rgba(255,255,255,0.8);
     }
 
     @media (max-width: 480px) {
-    .mensaje-final {
-        font-size: 48px;
-        text-align: center;
-        }
+      .carta { padding: 25px; }
+      .mensaje-final { font-size: 36px; }
     }
-
   </style>
 </head>
 
 <body>
 
 <div class="mensaje-final" id="mensajeFinal">
-  Te amo muñeca ❤️
+  ¡Feliz Cumpleaños, mi Amor! 🎂
+  <div style="font-size: 24px; margin-top: 20px;">Te amo muñeca ❤️</div>
 </div>
 
 <canvas id="cielo"></canvas>
 
 <div class="contenedor">
-
   <div class="carta">
-    <h1>Feliz Cumpleaños Amor De mi Vida</h1>
+    <h1>Feliz Cumpleaños Amor De Mi Vida</h1>
 
-    <!-- ✍️ PEGA AQUÍ TU CARTA -->
-    <p>
-Hoy es un día muy especial, tanto para ti como para mí. Hoy cumples 16 años, mi muñeca, y me siento inmensamente feliz por todo este tiempo en el que hemos estado más unidos que nunca.
-Estoy muy orgulloso de ti, de cómo has crecido no solo físicamente, sino también mentalmente. Le doy gracias a Dios por ponerte en mi vida, porque nada es casualidad y todo tiene un propósito.
-Tú me has enseñado lo que es el amor verdadero: la fidelidad, el respeto y la sinceridad. Me has demostrado que cuando una persona ama de verdad, lo demuestra con hechos y con decisión.
-Tenerte a mi lado me hace feliz. Crecer contigo, madurar y aprender juntos me hace amarte cada día más, porque me confirma que lo nuestro no es un juego, sino algo serio, real y eterno.
-Te amo, y aunque te lo he dicho millones de veces —por cartas, en persona o por chat— nunca me cansaré de decírtelo.
-Te amo por todo lo que has hecho por mí.
-Te amo porque eres una mujer decidida.
-Te amo porque eres amor en persona.
-Te amo porque, a pesar de todo lo que has vivido, nunca te rindes y nunca dejas que ese brillo tan especial que tienes se apague.
-Gracias por el tiempo que me dedicas y porque, en medio de tu libertad, decidiste escogerme a mí como el amor de tu vida.
-Y quiero que lo sepas siempre: estaré para ti en tus días buenos y en los malos. Estaré para apoyarte, levantarte en tus caídas, cuidarte cuando estés cansada o estresada, cuando no puedas comer yo estaré para darte de comer, cuando no puedas caminar yo estaré para cargarte, incluso cuando te enfades, incluso cuando yo no esté en mi mejor momento. Sin importar qué pase, siempre te amaré y estaré para ti.
-Te deseo lo mejor en este día, mi muñeca. Le pido a Dios que me permita tenerte durante toda mi vida, y que puedas cumplir todos tus sueños y anhelos. Sé que así será, porque eres valiente, capaz y muy especial.
-Te amo en esta vida… y en todas las demás.
+    <p>Hoy es un día muy especial, tanto para ti como para mí. Hoy cumples 16 años, mi muñeca, y me siento inmensamente feliz por todo este tiempo en el que hemos estado más unidos que nunca.</p>
 
-    </p>
+    <p>Estoy muy orgulloso de ti, de cómo has crecido no solo físicamente, sino también mentalmente. Le doy gracias a Dios por ponerte en mi vida, porque nada es casualidad y todo tiene un propósito. Tú me has enseñado lo que es el amor verdadero: la fidelidad, el respeto y la sinceridad. Me has demostrado que cuando una persona ama de verdad, lo demuestra con hechos y con decisión.</p>
+
+    <p>Tenerte a mi lado me hace feliz. Crecer contigo, madurar y aprender juntos me hace amarte cada día más, porque me confirma que lo nuestro no es un juego, sino algo serio, real y eterno. Te amo, y aunque te lo he dicho millones de veces nunca me cansaré de decírtelo.</p>
+
+    <p>Te amo por todo lo que has hecho por mí. Te amo porque eres una mujer decidida. Te amo porque eres amor en persona. Te amo porque, a pesar de todo lo que has vivido, nunca te rindes y nunca dejas que ese brillo tan especial que tienes se apague.</p>
+
+    <p>Gracias por el tiempo que me dedicas y porque, en medio de tu libertad, decidiste escogerme a mí como el amor de tu vida. Y quiero que lo sepas siempre: estaré para ti en tus días buenos y en los malos. Estaré para apoyarte, levantarte en tus caídas, cuidarte cuando estés cansada o estresada.</p>
+
+    <p>Incluso cuando te enfades, incluso cuando yo no esté en mi mejor momento. Sin importar qué pase, siempre te amaré y estaré para ti. Te deseo lo mejor en este día, mi muñeca. Le pido a Dios que me permita tenerte durante toda mi vida, y que puedas cumplir todos tus sueños y anhelos.</p>
 
     <div class="firma">
       Para: La Niña De Ojitos Lindos.
-      De: El Amor De Tu Vida.
+      <div>De: El Amor De Tu Vida.</div>
     </div>
     
     <button class="boton-final" onclick="finalFeliz()">
-        Feliz Año Nuevo ✨
+        Un mensaje para ti ✨
     </button>
-
   </div>
 </div>
 
@@ -190,110 +168,68 @@ Te amo en esta vida… y en todas las demás.
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   }
-
   ajustar();
   window.addEventListener("resize", ajustar);
 
-  const estrellas = [];
-  const fuegos = [];
+  const elementos = [];
 
-  // ⭐ ESTRELLAS MÁS BRILLANTES
-  for (let i = 0; i < 160; i++) {
-    estrellas.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 2 + 0.5,
-      o: Math.random(),
-      vel: Math.random() * 0.02 + 0.005
-    });
+  function crearParticula(x, y, esCorazon = false) {
+    const colores = esCorazon ? ["#ff4d6d", "#ff85a1", "#ffb3c1"] : ["#ffd700", "#ff4d4d", "#ff99cc", "#ffffff"];
+    return {
+      x, y,
+      dx: (Math.random() - 0.5) * (esCorazon ? 4 : 8),
+      dy: (Math.random() - 0.5) * (esCorazon ? 4 : 8),
+      vida: esCorazon ? 120 : 80,
+      size: Math.random() * 3 + 1,
+      color: colores[Math.floor(Math.random() * colores.length)],
+      esCorazon
+    };
   }
 
-function crearFuego() {
-  const x = Math.random() * canvas.width;
-  const y = Math.random() * canvas.height * 0.5;
-  const colores = ["#ffd700", "#ff4d4d", "#ff99cc", "#ffffff"];
-
-  for (let i = 0; i < 70; i++) { // 🔥 MÁS PARTÍCULAS
-    fuegos.push({
-      x,
-      y,
-      dx: (Math.random() - 0.5) * 7, // 💥 MÁS EXPANSIÓN
-      dy: (Math.random() - 0.5) * 7,
-      vida: 80,                     // ⏳ DURAN MÁS
-      size: Math.random() * 2.5 + 1, // ✨ MÁS GRANDES
-      color: colores[Math.floor(Math.random() * colores.length)]
-    });
+  function finalFeliz() {
+    document.getElementById("mensajeFinal").style.display = "flex";
+    for (let i = 0; i < 150; i++) {
+        // Lanzamos corazones y fuegos desde el centro
+        elementos.push(crearParticula(canvas.width / 2, canvas.height / 2, Math.random() > 0.5));
+    }
   }
-}
-
-function explosionInicial() {
-  const x = canvas.width / 2;
-  const y = canvas.height / 3;
-  const colores = ["#ffd700", "#ffffff", "#ff99cc", "#ff4d4d"];
-
-  for (let i = 0; i < 120; i++) { // 🎆 EXPLOSIÓN GRANDE
-    fuegos.push({
-      x,
-      y,
-      dx: (Math.random() - 0.5) * 9,
-      dy: (Math.random() - 0.5) * 9,
-      vida: 100,
-      size: Math.random() * 3 + 1.5,
-      color: colores[Math.floor(Math.random() * colores.length)]
-    });
-  }
-}
-
 
   function animar() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // ESTRELLAS
-    estrellas.forEach(e => {
-      ctx.beginPath();
-      ctx.arc(e.x, e.y, e.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255,255,255,${e.o})`;
-      ctx.fill();
-      e.o += (Math.random() - 0.5) * e.vel;
-      e.o = Math.max(0.3, Math.min(1, e.o));
-    });
-
-    // FUEGOS ARTIFICIALES
-    fuegos.forEach((p, i) => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = p.color;
-      ctx.fill();
+    elementos.forEach((p, i) => {
       p.x += p.dx;
       p.y += p.dy;
       p.vida--;
-      if (p.vida <= 0) fuegos.splice(i, 1);
+
+      if (p.vida <= 0) {
+        elementos.splice(i, 1);
+      } else {
+        ctx.beginPath();
+        if (p.esCorazon) {
+            // Dibujamos un corazón pequeño
+            ctx.font = `${p.size * 5}px serif`;
+            ctx.fillStyle = p.color;
+            ctx.fillText("❤️", p.x, p.y);
+        } else {
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = p.color;
+            ctx.fill();
+        }
+      }
     });
+
+    // Pirotecnia aleatoria de fondo suave
+    if (Math.random() < 0.03) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height * 0.5;
+        for(let i=0; i<30; i++) elementos.push(crearParticula(x, y, false));
+    }
 
     requestAnimationFrame(animar);
   }
 
-  // 🎆 MÁS FRECUENTES
-explosionInicial(); // 💥 AL ABRIR LA PÁGINA
-setInterval(crearFuego, 700);
-animar();
-
-function finalFeliz() {
-  // Ocultar carta
-  document.querySelector('.carta').style.display = 'none';
-
-  // Mostrar mensaje final
-  const mensaje = document.getElementById('mensajeFinal');
-  mensaje.style.display = 'flex';
-
-  // 💥 LLUVIA INTENSA DE PIROTECNIA
-  for (let i = 0; i < 8; i++) {
-    setTimeout(() => {
-      explosionInicial();
-    }, i * 400);
-  }
-}
-
+  animar();
 </script>
 
 </body>
